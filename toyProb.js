@@ -238,9 +238,28 @@ var countValuesInObj = function(obj, value) {
 
 // 24. Find all keys in an object (and nested objects) by a provided name and rename
 // them to a provided new name while preserving the value stored at that key.
-var replaceKeysInObj = function(obj, oldKey, newKey) {
+var obj = {
+  food: 'pizza',
+  name: 'morgan',
+  cats: ['kj', 'atlas']
+}
 
+function replaceKeysInObj(obj, oldKey, newKey) {
+  var keys = Object.keys(obj);
+  console.log(keys)
+  var vals = Object.values(obj);
+  for (var i = 0; i < keys.length; i++) {
+    for (var k = 0; k < vals.length; k++) {
+      if (keys[i] === oldKey) {
+        delete[obj[oldKey]]
+        obj[newKey] = vals[i];
+      }
+    }
+  }
+  return obj;
 };
+
+replaceKeysInObj(obj, 'food', 'bois')
 
 // 25. Get the first n Fibonacci numbers. In the Fibonacci sequence, each subsequent
 // number is the sum of the previous two.
@@ -286,7 +305,7 @@ var nestedEvenSum = function(obj) {
 
 // 30. Flatten an array containing nested arrays.
 // flatten([1,[2],[3,[[4]]],5]); // [1,2,3,4,5]
-var flatten = function(array) {
+var flatten = function(array) { toy
 };
 
 // 31. Given a string, return an object containing tallies of each letter.
